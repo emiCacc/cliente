@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Producto } from '../models/producto';
 import { environment } from 'src/environments/environment'; 
 
@@ -13,7 +13,8 @@ export class ProductoService {
   constructor(private http: HttpClient) { }
 
   getProductos(): Observable<any> {
-    return this.http.get(environment.apiURL);
+    return this.http.get(environment.apiURL).pipe(
+      map(products => products));
   }
 
   eliminarProducto(id: string): Observable<any> {

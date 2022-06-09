@@ -22,13 +22,13 @@ export class ListarProductosComponent implements OnInit {
 
 
   obtenerProductos() {
-    this.listProductos$ = this._productoService.getProductos();
-    // this._productoService.getProductos().subscribe(data => {
-    //   console.log(data);
-    //   this.listProductos = data;
-    // }, error => {
-    //   console.log(error);
-    // })
+    // this.listProductos$ = this._productoService.getProductos();
+    this._productoService.getProductos().subscribe(data => {
+      console.log(data);
+      this.listProductos = data;
+    }, error => {
+      console.log(error);
+    })
   }
 
   eliminarProducto(id:any){

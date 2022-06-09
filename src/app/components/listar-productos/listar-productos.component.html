@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
-                <div class="card-body text-center" *ngIf="listProductos$ | async as listaProductos">
+                <!-- <div class="card-body text-center" *ngIf="listProductos$ | async as listaProductos"> -->
+                  <div class="card-body text-center">
                     <span class="titulo">INVENTARIO</span>
                     <button class="btn btn-success float-end" routerLink="/crear-producto">+</button>
                     <table *ngIf="listProductos.length > 0" class="table table-striped mt-3">
@@ -16,7 +17,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let producto of listaProductos">
+                          <tr *ngFor="let producto of listProductos">
                             <td>{{ producto.nombre }}</td>
                             <td>{{ producto.categoria }}</td>
                             <td>{{ producto.ubicacion }}</td>
