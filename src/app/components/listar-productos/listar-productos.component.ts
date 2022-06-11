@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
+//Componentes
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import { Component, OnInit } from '@angular/core';
+//Libreria
+import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listar-productos',
@@ -10,6 +12,7 @@ import { ProductoService } from 'src/app/services/producto.service';
   styleUrls: ['./listar-productos.component.css']
 })
 export class ListarProductosComponent implements OnInit {
+  titulo: String = "Inventario de productos";
   listProductos: Producto[] = [];
   listProductos$!: Observable<Producto[]>;
 

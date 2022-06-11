@@ -4,8 +4,8 @@
             <div class="card">
                 <!-- <div class="card-body text-center" *ngIf="listProductos$ | async as listaProductos"> -->
                   <div class="card-body text-center">
-                    <span class="titulo">INVENTARIO</span>
-                    <button class="btn btn-success float-end" routerLink="/crear-producto">+</button>
+                    <span class="titulo">{{titulo}}</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-producto">Agregar<i class="fa-solid fa-plus"></i></button>
                     <table *ngIf="listProductos.length > 0" class="table table-striped mt-3">
                         <thead>
                           <tr>
